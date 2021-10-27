@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Covid-19 Tracker</title>
+        <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap" rel="stylesheet" />
+
+        <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="./css/grid.css" />
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body class="loading">
+        <!-- header -->
+        <header class="nav-wrapper">
+            <div class="container">
+                <div class="nav">
+                    <a href="" class="logo"> C<i class="bx bxs-virus-block bx-tada"></i>VID-19 </a>
+                    <div id="darkModeBtn" class="dark-mode__switch">
+                        <span>
+                            <i class="bx bxs-moon"></i>
+                            <i class="bx bxs-sun"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+
+        <!-- main content -->
+        <div class="content">
+            <div class="container">
+                <!-- country select -->
+                <div class="row">
+                  
+
+                    <div class="col-12">
+                        <div class="box">
+                            <div class="box-header">top countries affected</div>
+
+                            <div class="box-body">
+                                <div id="dataTable">
+                                    <table class="table-countries">
+                                        <thead>
+                                            <tr>
+                                                <th>Country</th>
+                                                <th>Confirmed</th>
+                                                <th>Recovered</th>
+                                                <th>Deaths</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-countries">
+                                            <tr>
+                                                <td>test</td>
+                                                <td>test</td>
+                                                <td>test</td>
+                                                <td>test</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div id="table_box_bootstrap"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end country select -->
+            </div>
+        </div>
+        <!-- end main content -->
+
+        <div class="modal hide">
+            <button id="backBtn"><i class='bx bx-arrow-back'></i></button>
+            <!-- covid data -->
+            <div class="row">
+                <!-- left content -->
+                <div class="col-8 col-md-12 col-sm-12">
+                    <div class="row">
+                        <!-- effect -->
+                        <div class="col-4 col-md-4 col-sm-12">
+                            <div class="box box-hover">
+                                <div class="count count-confirmed">
+                                    <div class="count-icon">
+                                        <i class="bx bxs-virus"></i>
+                                    </div>
+                                    <div class="count-info">
+                                        <h5 id="confirm-total">123,456,789</h5>
+                                        <span>confirmed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end effect -->
+                        <!-- recover -->
+                        <div class="col-4 col-md-4 col-sm-12">
+                            <div class="box box-hover">
+                                <div class="count count-recovered">
+                                    <div class="count-icon">
+                                        <i class="bx bxs-heart"></i>
+                                    </div>
+                                    <div class="count-info">
+                                        <h5 id="confirm-recover">123,456,789</h5>
+                                        <span>recovered</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end recover -->
+                        <!-- death -->
+                        <div class="col-4 col-md-4 col-sm-12">
+                            <div class="box box-hover">
+                                <div class="count count-death">
+                                    <div class="count-icon">
+                                        <i class="bx bxs-skull"></i>
+                                    </div>
+                                    <div class="count-info">
+                                        <h5 id="confirm-death">123,456,789</h5>
+                                        <span>deaths</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end death -->
+
+                        <!-- chart -->
+                        <div class="col-12">
+                            <div class="box">
+                                <div class="box-header">all times</div>
+                                <div class="box-body">
+                                    <div id="all-times-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end chart -->
+
+                      
+
+                     
+                    </div>
+                </div>
+                <!-- end left content -->
+
+                <!-- right content -->
+                <div class="col-4 col-md-12 col-sm-12">
+                    <!-- Country info -->
+                    <div class="box">
+                      
+                        <div class="box-header" id="country-name">Country info</div>
+                        <div class="box-body" id="country-info"></div>
+                        <div id="country-capital"></div>
+                        <div id="country-population"></div>
+                        <div id="country-region"></div>
+                        <div id="country-subregion"></div>
+
+                    </div>
+                    <!-- end Country info -->
+
+                   
+                </div>
+                <!-- end right content -->
+            </div>
+            <!-- end covid data  -->
+        </div>
+
+        <!-- footer -->
+        <footer class="footer"></footer>
+        <!-- end footer -->
+
+        <!-- loader -->
+        <div class="loader">
+            <i class="bx bxs-virus bx-spin"></i>
+        </div>
+        <!-- end loader -->
+
+        <!-- chart -->
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <!-- JS -->
+        <script src="./js/countryApi.js"></script>
+        <script src="./js/covidApi.js"></script>
+        <script src="./js/app.js"></script>
+        <script src="./js/table.js"></script>
+        <script src="./js/sortable.js"></script>
+    </body>
+</html>
